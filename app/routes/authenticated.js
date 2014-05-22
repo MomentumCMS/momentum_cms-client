@@ -6,11 +6,11 @@ export default Ember.Route.extend({
     this._redirect();
   },
 
-  //-- Private Methods ------------------------------------------------------
+  //-- Private Methods ----------------------------------------------------
 
   _redirect: function() {
-    if(this.get('authentication.loggedIn')) {
-      this.transitionTo('account');
+    if(this.get('authentication.loggedIn') !== true) {
+      this.transitionTo('session');
     }
   }
 
