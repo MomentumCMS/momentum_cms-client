@@ -12,7 +12,7 @@ test('it exists', function() {
   ok(this.subject());
 });
 
-test('redirects authenticated users to their account', function() {
+test('redirects authenticated users to their dashboard', function() {
   expect(1);
   var route = this.subject();
   route.transitionTo = sinon.spy();
@@ -20,5 +20,5 @@ test('redirects authenticated users to their account', function() {
   authentication.set('loggedIn', true);
   route.set('authentication', authentication);
   route._redirect();
-  ok(route.transitionTo.called, 'transitionTo was called');
+  ok(route.transitionTo.calledWith('admin.dashboard'), 'transitionTo was called');
 });

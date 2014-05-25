@@ -10,7 +10,7 @@ export default Ember.Route.extend({
 
   _redirect: function() {
     if(this.get('authentication.loggedIn')) {
-      this.transitionTo('account');
+      this.transitionTo('admin.dashboard');
     }
   }
 

@@ -16,6 +16,7 @@ var app = new EmberApp({
 // Use this to add additional libraries to the generated output files.
 app.import('vendor/ember-data/ember-data.js');
 app.import('vendor/jquery-mockjax/jquery.mockjax.js');
+app.import('vendor/ember-easyForm/index.js');
 app.import('vendor/sinon/index.js');
 
 // If the library that you are including contains AMD or ES6 modules that
@@ -31,6 +32,5 @@ app.import('vendor/ic-ajax/dist/named-amd/main.js', {
     'request',
   ]
 });
-
 
 module.exports = app.toTree();

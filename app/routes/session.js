@@ -21,7 +21,7 @@ export default Ember.Route.extend({
     _this.set('controller.isLoading', true);
     var request = this.get('authentication').authenticate(credentials.email, credentials.password, credentials.rememberMe);
     request.then(function() {
-      _this.transitionTo('account');
+      _this.transitionTo('admin.dashboard');
       _this.set('controller.isLoading', false);
     });
     request.catch(function() {

@@ -15,7 +15,7 @@ test('it exists', function() {
 
 test('create', function() {
   expect(3);
-  mockHttp('/login', 'sessions/create', 200);
+  mockHttp('/sessions', 'sessions/create', 200);
   var route = this.subject();
   route.set('authentication', Authentication.create());
   route.set('controller', {
@@ -28,7 +28,7 @@ test('create', function() {
   ok(route.get('controller.isLoading'));
   request.then(function() {
     equal(false, route.get('controller.isLoading'), 'isLoading was reset after the request');
-    ok(route.transitionTo.called);
+    ok(route.transitionTo.calledWith('admin.dashboard'));
   });
   return request;
 });

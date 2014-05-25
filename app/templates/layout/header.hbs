@@ -4,7 +4,8 @@
 
   <ul>
     {{#if authentication.loggedIn}}
-      <li>{{#link-to 'account'}}Account{{/link-to}}</li>
+      <li>{{#link-to 'admin.account'}}Account{{/link-to}}</li>
+      <li>{{#link-to 'admin.dashboard'}}Dashboard{{/link-to}}</li>
       <li><a href="#logout" {{action 'logout'}}>Logout</a></li>
     {{else}}
       <li>{{#link-to 'session'}}Login{{/link-to}}</li>
