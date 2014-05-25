@@ -1,7 +1,7 @@
 export default {
   name: 'restAdapter',
   initialize: function() {
-    DS.RESTAdapter.reopen({
+    DS.ActiveModelAdapter.reopen({
       host: ENV.API_URL
     });
   }

@@ -19,8 +19,10 @@ export default AuthenticatedRoute.extend({
   //-- Private Methods ------------------------------------------------------
 
   _saveRecord: function() {
-    var request = this.currentModel.save();
-    return request;
+    var model = this.currentModel;
+    return model.save().then(function() {
+
+    });
   }
 
 });
