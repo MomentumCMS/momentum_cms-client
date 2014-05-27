@@ -12,3 +12,4 @@
 
 * We love testing <3 <3 <3
 * Once `ember server` is running, open http://0.0.0.0:4200/tests in a private window
+
