@@ -1,6 +1,5 @@
 language: node_js
 node_js:
   - "0.10"
-  - "0.8"
 install: npm install -g ember-cli
-script: ember test
+script: "npm install && ember test"
