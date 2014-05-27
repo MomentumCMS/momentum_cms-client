@@ -2,4 +2,8 @@ language: node_js
 node_js:
   - "0.10"
 install: npm install -g ember-cli
-script: "npm install && ember test"
+before_script:
+  - npm install -g bower
+  - bower install
+  - npm install
+script: ember test
