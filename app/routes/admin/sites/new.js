@@ -11,17 +11,21 @@ export default AuthenticatedRoute.extend({
   //-- Actions --------------------------------------------------------------
 
   actions: {
-    submit: function() {
-      this._saveRecord();
+    submit: function(e) {
+      this._submit(e);
     }
   },
 
   //-- Private Methods ------------------------------------------------------
 
-  _saveRecord: function() {
-    var model = this.currentModel;
-    return model.save().then(function() {
-
+  _submit: function() {
+    var _this = this;
+    var model = this.get('currentModel');
+    model.get('errors').clear();
+    return model.save().then(function(site) {
+      _this.transitionTo('pages.index', site);
+    }).catch(function() {
+    
     });
   }
 

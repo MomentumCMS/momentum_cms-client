@@ -18,8 +18,8 @@ test('it has the correct attributes', function() {
   ok(attributes.indexOf('label') !== -1);
   ok(attributes.indexOf('identifier') !== -1);
   ok(attributes.indexOf('host') !== -1);
-  ok(attributes.indexOf('default_locale') !== -1);
-  ok(attributes.indexOf('available_locales') !== -1);
-  ok(attributes.indexOf('created_at') !== -1);
-  ok(attributes.indexOf('updated_at') !== -1);
+  ok(attributes.indexOf('defaultLocale') !== -1);
+  ok(attributes.indexOf('availableLocales') !== -1);
+  ok(attributes.indexOf('createdAt') !== -1);
+  ok(attributes.indexOf('updatedAt') !== -1);
 });

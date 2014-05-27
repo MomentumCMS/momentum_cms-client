@@ -13,7 +13,7 @@ export default Ember.Route.extend({
   _logout: function() {
     var _this = this;
     return this.get('authentication').logout().then(function() {
-      _this.transitionTo('session');
+      _this.transitionTo('frontend.session');
     });
   }
 

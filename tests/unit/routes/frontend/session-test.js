@@ -1,10 +1,10 @@
 /* global sinon*/
 
 import { test, moduleFor } from 'ember-qunit';
-import mockHttp from '../../helpers/mock-http';
-import Authentication from '../../../services/authentication';
+import mockHttp from '../../../helpers/mock-http';
+import Authentication from '../../../../services/authentication';
 
-moduleFor('route:session', 'Unit - SessionRoute', {
+moduleFor('route:frontend/session', 'Unit - SessionRoute', {
   setup: function() {},
   teardown: function() {}
 });
