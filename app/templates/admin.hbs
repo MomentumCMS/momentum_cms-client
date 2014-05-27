@@ -1,5 +1,27 @@
 {{partial 'admin/layout/header'}}
 
-{{outlet}}
+<div class="grid">
+
+  <div class="grid__item two-twelfths">
+    <aside>
+      <h4>Site Nav</h4>
+      <ul>
+        <li class='title'><strong>Actions</strong></li>
+        <li>{{#link-to 'admin.sites.new'}}New Site{{/link-to}}</li>
+        <li class='title'><strong>Sites</strong></li>
+        {{#each site in model}}
+          {{#if site.id}}
+            <li>{{#link-to 'admin.pages' site}}{{site.label}}{{/link-to}}</li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </aside>
+  </div>
+
+  <div class="grid__item ten-twelfths">
+    {{outlet}}
+  </div>
+
+</div>
 
 {{partial 'admin/layout/footer'}}

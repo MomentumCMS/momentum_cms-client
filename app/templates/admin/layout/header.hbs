@@ -2,23 +2,10 @@
 
   <h1>MomentumCMS Client</h1>
 
-  <h4>Account Nav</h4>
-  <ul>
+  <ul classs='account-nav'>
     <li>{{#link-to 'admin.account'}}Account{{/link-to}}</li>
     <li>{{#link-to 'admin.dashboard'}}Dashboard{{/link-to}}</li>
     <li><a href="#logout" {{action 'logout'}}>Logout</a></li>
-  </ul>
-
-  <h4>Site Nav</h4>
-  <ul>
-    <li class='title'><strong>Actions</strong></li>
-    <li>{{#link-to 'admin.sites.new'}}New Site{{/link-to}}</li>
-    <li class='title'><strong>Sites</strong></li>
-    {{#each site in model}}
-      {{#if site.id}}
-        <li>{{#link-to 'admin.pages' site}}{{site.label}}{{/link-to}}</li>
-      {{/if}}
-    {{/each}}
   </ul>
 
 </header>
