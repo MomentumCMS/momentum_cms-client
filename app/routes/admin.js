@@ -5,7 +5,10 @@ export default AuthenticatedRoute.extend({
   //-- Callbacks ------------------------------------------------------------
 
   model: function() {
-    return this.store.find('site');
+    return new Ember.RSVP.hash({
+      sites: this.get('store').find('site'),
+      templates: this.get('store').find('template')
+    });
   },
 
   afterModel: function() {

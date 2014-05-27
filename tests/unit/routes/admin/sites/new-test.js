@@ -28,6 +28,15 @@ test('it returns a new site model instance', function() {
   });
 });
 
+test('it destroys unsaved model instances on transition', function() {
+  var route = this.subject();
+  mockModel.set('isDirty', true);
+  route.set('currentModel', mockModel);
+  route._cleanup();
+  ok(mockModel.transitionTo.calledWith('uncommitted'), 'The model was rolled back');
+  ok(mockModel.deleteRecord.called, 'The model was deleted');
+});
+
 test('it saves the site and redirects the user to pages.index', function() {
   var route = this.subject();
   route.set('currentModel', mockModel);

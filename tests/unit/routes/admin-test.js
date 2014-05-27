@@ -1,12 +1,16 @@
 /* globals sinon */
 import { test, moduleFor } from 'ember-qunit';
-import Authentication from '../../../services/authentication';
 
 moduleFor('route:admin', 'Unit - AdminRoute', {
   setup: function() {
     var route = this.subject();
+    route.called = [];
     route.store = {
-      find: sinon.spy()
+      find: function(model) {
+        return new Ember.RSVP.Promise(function(resolve) {
+          resolve(model);
+        });
+      }
     };
   },
   teardown: function() {}
@@ -14,12 +18,6 @@ moduleFor('route:admin', 'Unit - AdminRoute', {
 
 test('it exists', function() {
   ok(this.subject());
-});
-
-test('it loads sites', function() {
-  var route = this.subject();
-  route.model();
-  ok(route.store.find.calledWith('site'), 'The correct transition was called');
 });
 
 test('it redirects users to the new site path if no sites exist', function() {

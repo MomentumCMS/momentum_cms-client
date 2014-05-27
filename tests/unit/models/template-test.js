@@ -1,8 +1,8 @@
 import { test, moduleForModel } from 'ember-qunit';
 
 
-moduleForModel('site', 'Unit - Site Model', {
-  needs: ['model:page']
+moduleForModel('template', 'Unit - Template Model', {
+  needs: ['model:site', 'model:page']
 });
 
 
@@ -11,17 +11,18 @@ test('it exists', function() {
 });
 
 test('it has the correct attributes', function() {
-  var Site = this.subject();
+  var Template = this.subject();
   var attributes = [];
-  Site.eachAttribute(function(name, meta) {
+  Template.eachAttribute(function(name, meta) {
     attributes.push(name);
   });
-  ok(attributes.indexOf('title') !== -1);
   ok(attributes.indexOf('label') !== -1);
   ok(attributes.indexOf('identifier') !== -1);
-  ok(attributes.indexOf('host') !== -1);
-  ok(attributes.indexOf('defaultLocale') !== -1);
-  ok(attributes.indexOf('availableLocales') !== -1);
+  ok(attributes.indexOf('css') !== -1);
+  ok(attributes.indexOf('js') !== -1);
+  ok(attributes.indexOf('value') !== -1);
+  ok(attributes.indexOf('permanentRecord') !== -1);
+  ok(attributes.indexOf('adminValue') !== -1);
   ok(attributes.indexOf('createdAt') !== -1);
   ok(attributes.indexOf('updatedAt') !== -1);
 });

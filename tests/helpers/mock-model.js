@@ -1,3 +1,4 @@
+/* global sinon */
 export default Ember.Object.create({
   errors: {
     clear: function() { return true; }
@@ -7,5 +8,7 @@ export default Ember.Object.create({
     return new Ember.RSVP.Promise(function(resolve, reject) {
       resolve(_this);
     });
-  }
+  },
+  deleteRecord: sinon.spy(),
+  transitionTo: sinon.spy()
 });

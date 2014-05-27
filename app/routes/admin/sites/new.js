@@ -13,6 +13,9 @@ export default AuthenticatedRoute.extend({
   actions: {
     submit: function(e) {
       this._submit(e);
+    },
+    willTransition: function() {
+      this._cleanup();
     }
   },
 
@@ -27,6 +30,15 @@ export default AuthenticatedRoute.extend({
     }).catch(function() {
     
     });
+  },
+
+  _cleanup: function() {
+    var model = this.get('currentModel');
+    if(model.get('isDirty')) {
+      model.transitionTo('uncommitted');
+      model.deleteRecord();
+    }
+    return true;
   }
 
 });

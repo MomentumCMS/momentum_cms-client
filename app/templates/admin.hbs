@@ -9,7 +9,7 @@
         <li class='title'><strong>Actions</strong></li>
         <li>{{#link-to 'admin.sites.new'}}New Site{{/link-to}}</li>
         <li class='title'><strong>Sites</strong></li>
-        {{#each site in model}}
+        {{#each site in model.sites}}
           {{#if site.id}}
             <li>{{#link-to 'admin.pages' site}}{{site.label}}{{/link-to}}</li>
           {{/if}}

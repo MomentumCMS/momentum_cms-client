@@ -4,7 +4,7 @@ import mockModel from '../../../../helpers/mock-model';
 import Authentication from '../../../../../services/authentication';
 
 moduleFor('route:admin/pages/new', 'Unit - AdminPagesNewRoute', {
-  needs: ['model:page'],
+  needs: ['model:page', 'model:site'],
   setup: function() {},
   teardown: function() {}
 }, function(container, context) {

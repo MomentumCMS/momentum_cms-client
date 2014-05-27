@@ -6,5 +6,6 @@ export default DS.Model.extend({
   defaultLocale: DS.attr(),
   availableLocales: DS.attr(),
   createdAt: DS.attr(),
-  updatedAt: DS.attr()
+  updatedAt: DS.attr(),
+  hasMany: DS.hasMany('page')
 });
