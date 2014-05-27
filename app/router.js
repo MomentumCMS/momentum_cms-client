@@ -16,6 +16,7 @@ Router.map(function() {
       this.route('new');
       this.resource('admin.pages', {path: '/:site_id/pages'}, function() {
         this.route('index');
+        this.route('new');
       });
     });
   });

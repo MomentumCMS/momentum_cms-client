@@ -6,5 +6,5 @@ before_script:
   - npm install -g bower
   - bower install
   - npm install
-  - ember server
+  - nohup ember server &
 script: ember test
