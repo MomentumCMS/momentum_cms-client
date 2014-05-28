@@ -40,7 +40,7 @@ var Authentication = Ember.Object.extend({
     localStorage.clear();
     var _this = this;
     var requestData = {session: {email: email, password: password, remember_me: remember_me}};
-    var req = ajax({url: Ember.ENV.API_URL + '/sessions', type: 'POST', data: requestData, dataType: 'json'});
+    var req = ajax({url: Ember.ENV.SESSIONS_URL + '/sessions', type: 'POST', data: requestData, dataType: 'json'});
     req.then(function(res) {
       _this.set('currentUser', res.user);
       _this.set('token', res.user.api_key.access_token);
