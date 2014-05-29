@@ -28,12 +28,13 @@ module.exports = function(environment) {
   }
 
   if (environment === 'test') {
-    ENV.API_URL = 'http://0.0.0.0:4200';
+    // Test variables are defined inline in tests/index.html
   }
 
   if (environment === 'production') {
 
   }
+  debugger;
 
   return ENV;
 };

@@ -1,10 +1,10 @@
-export default function mockHttp(url, fixture, status) {
+export default function mockHttp(url, responseObject, status) {
   $.mockjaxSettings.contentType = 'application/json';
   Ember.$.mockjax({
     url: url,
     dataType: 'json',
     contentType: 'application/json',
-    proxy: '/' + fixture + '.json',
+    responseText: responseObject,
     status: status || 200
   });
 }

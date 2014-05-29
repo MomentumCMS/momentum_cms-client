@@ -3,6 +3,7 @@
 import { test, moduleFor } from 'ember-qunit';
 import mockHttp from '../../../helpers/mock-http';
 import Authentication from '../../../../services/authentication';
+import createSuccessResponse from '../../../mocks/sessions/create-success';
 
 moduleFor('route:frontend/session', 'Unit - SessionRoute', {
   setup: function() {},
@@ -15,7 +16,8 @@ test('it exists', function() {
 
 test('create', function() {
   expect(3);
-  mockHttp('/sessions', 'sessions/create', 200);
+
+  mockHttp('*/sessions', createSuccessResponse, 200);
   var route = this.subject();
   route.set('authentication', Authentication.create());
   route.set('controller', {

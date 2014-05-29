@@ -2,6 +2,8 @@
 import { test, moduleFor } from 'ember-qunit';
 import mockHttp from '../../helpers/mock-http';
 import Authentication from '../../../services/authentication';
+import createSuccessResponse from '../../mocks/sessions/create-success';
+
 
 moduleFor('service:authentication', 'Unit - AuthenticationService', {
   setup: function() {
@@ -13,7 +15,7 @@ moduleFor('service:authentication', 'Unit - AuthenticationService', {
 });
 
 test('it authenticates with an email and password and stores credentials in localStorage', function() {
-  mockHttp('/login', 'sessions/create', 200);
+  mockHttp('*/sessions', createSuccessResponse, 200);
   var authentication = Authentication.create();
   expect(5);
   return authentication.authenticate('john.smith@test.com', 'passpass', true).then(function() {
