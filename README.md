@@ -1,5 +1,7 @@
 # MomentumCMS Admin Client
 
+[![Build Status](https://travis-ci.org/MomentumCMS/momentum_cms-client.svg?branch=master)](https://travis-ci.org/MomentumCMS/momentum_cms-client)
+
 ### Setup and Installation
 
 * `npm install -g ember-cli`

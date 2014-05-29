@@ -1,11 +1,19 @@
-<header>
+<header class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
-  <h1>MomentumCMS Client</h1>
+  <div class="container-fluid">
 
-  <ul classs='account-nav'>
-    <li>{{#link-to 'admin.account'}}Account{{/link-to}}</li>
-    <li>{{#link-to 'admin.dashboard'}}Dashboard{{/link-to}}</li>
-    <li><a href="#logout" {{action 'logout'}}>Logout</a></li>
-  </ul>
+    <div class="navbar-header">
+      {{#link-to 'admin.dashboard' classNames="navbar-brand"}}MomentumCMS Client{{/link-to}}
+    </div>
+
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        {{#link-to 'admin.dashboard' tagName='li'}}<a href='#'>Dashboard</a>{{/link-to}}
+        {{#link-to 'admin.account' tagName='li'}}<a href='#'>Account</a>{{/link-to}}
+        <li><a href="#logout" {{action 'logout'}}>Logout</a></li>
+      </ul>
+    </nav>
+
+  </div><!-- .container -->
 
 </header>

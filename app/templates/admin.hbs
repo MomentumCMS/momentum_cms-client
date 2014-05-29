@@ -1,27 +1,18 @@
 {{partial 'admin/layout/header'}}
 
-<div class="grid">
+<div class="container-fluid">
 
-  <div class="grid__item two-twelfths">
-    <aside>
-      <h4>Site Nav</h4>
-      <ul>
-        <li class='title'><strong>Actions</strong></li>
-        <li>{{#link-to 'admin.sites.new'}}New Site{{/link-to}}</li>
-        <li class='title'><strong>Sites</strong></li>
-        {{#each site in model.sites}}
-          {{#if site.id}}
-            <li>{{#link-to 'admin.pages' site}}{{site.label}}{{/link-to}}</li>
-          {{/if}}
-        {{/each}}
+  <div class="row">
+    <div class="col-sm-3 col-md-2 sidebar">
+      <p><strong>Navigation</strong></p>
+      <ul class="nav nav-sidebar">
       </ul>
-    </aside>
+    </div><!-- .sidebar -->
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      {{outlet}}
+    </div><!-- .main -->
   </div>
 
-  <div class="grid__item ten-twelfths">
-    {{outlet}}
-  </div>
-
-</div>
+</div><!-- .container-fluid -->
 
 {{partial 'admin/layout/footer'}}

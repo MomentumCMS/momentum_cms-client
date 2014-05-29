@@ -1,9 +1,17 @@
-<header>
+<header class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 
-  <h1>MomentumCMS Client</h1>
+  <div class="container-fluid">
 
-  <ul>
-    <li>{{#link-to 'frontend.session'}}Login{{/link-to}}</li>
-  </ul>
+    <div class="navbar-header">
+      {{#link-to 'frontend' classNames="navbar-brand"}}MomentumCMS Client{{/link-to}}
+    </div>
+
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        {{#link-to 'frontend.session' tagName='li'}}<a href='#'>Login</a>{{/link-to}}
+      </ul>
+    </nav>
+
+  </div><!-- .container -->
 
 </header>
