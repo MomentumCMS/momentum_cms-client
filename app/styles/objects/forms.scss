@@ -1,0 +1,21 @@
+form {
+  .label {
+    padding: 0;
+    font-size: inherit;
+    color: #333;
+    margin-bottom: 5px;
+    &.help-block {
+      display: block;
+      margin-bottom: 10px;
+      margin-top: 5px;
+      color: #737373;
+      font-weight: normal;
+      text-align: left;
+    }
+  }
+  .has-error {
+    .help-block {
+      color: #a94442;
+    }
+  }
+}
