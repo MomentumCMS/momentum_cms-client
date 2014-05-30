@@ -4,5 +4,6 @@ export default DS.Model.extend({
   slug: DS.attr('string'),
   createdAt: DS.attr(),
   updatedAt: DS.attr(),
-  belongsTo: DS.belongsTo('site')
+  site: DS.belongsTo('site'),
+  template: DS.belongsTo('template')
 });

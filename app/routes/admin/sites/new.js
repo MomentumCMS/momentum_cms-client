@@ -27,9 +27,7 @@ export default AuthenticatedRoute.extend({
     model.get('errors').clear();
     return model.save().then(function(site) {
       _this.transitionTo('pages.index', site);
-    }).catch(function() {
-    
-    });
+    }).catch(function() {});
   },
 
   _cleanup: function() {

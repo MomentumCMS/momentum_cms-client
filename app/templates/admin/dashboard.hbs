@@ -10,12 +10,12 @@
         <div class="list-group-item">
           <div class="media">
             <div class="pull-left">
-              {{#link-to 'admin.pages' site}}
+              {{#link-to 'admin.pages' site.id}}
                 <img {{bind-attr src=site.randomAvatar}} class="img-circle img-75">
               {{/link-to}}
             </div>
             <div class="media-body">
-              {{#link-to 'admin.pages' site}}
+              {{#link-to 'admin.pages' site.id}}
                 <h4>{{site.label}}</h4>
               {{/link-to}}
               <a target="_blank" class="site-host" {{bind-attr href=site.host}}>{{site.host}}</a>

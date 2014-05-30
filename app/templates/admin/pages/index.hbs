@@ -4,18 +4,34 @@
   </div><!-- .sidebar -->
   <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-    <h3>Pages</h3>
+    <div class="page-header">
+      <h3>Pages</h3>
+    </div>
 
-    {{#link-to 'admin.pages.new'}}New Page{{/link-to}}
+    {{#link-to 'admin.pages.new' classNames='btn btn-default pull-right'}}
+      <i class="fa fa-plus"></i> New Page
+    {{/link-to}}
 
-    <table>
+    <table class="table">
       <thead>
         <tr>
-          <th></th>
           <th>Label</th>
+          <th>Slug</th>
         </tr>
       </thead>
       <tbody>
+        {{#each page in model}}
+          <tr>
+            <td>
+              {{#link-to 'admin.pages.edit' page}}
+                {{page.label}}
+              {{/link-to}}
+            </td>
+            <td>
+              {{page.slug}}
+            </td>
+          </tr>
+        {{/each}}
       </tbody>
     </table>
 

@@ -14,3 +14,10 @@ moduleFor('route:admin/pages/index', 'Unit - AdminPagesIndexRoute', {
 test('it exists', function() {
   ok(this.subject());
 });
+
+test('it pulls the model from the admin.pages route', function() {
+  var route = this.subject();
+  route.modelFor = sinon.spy();
+  route.model();
+  ok(route.modelFor.calledWith('admin.pages'), 'The route requested the model for admin.pages');
+});
