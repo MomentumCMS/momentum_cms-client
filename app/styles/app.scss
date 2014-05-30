@@ -1,4 +1,8 @@
+// Variables
+$fa-font-path: "/assets" !default;
+
 @import "vendor/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
+@import "vendor/font-awesome/scss/font-awesome";
 
 @import "initializers/typography";
 @import "initializers/clearfix";
