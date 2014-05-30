@@ -1,7 +1,7 @@
 <div class='panel panel-default'>
   <div class="panel-body">
 
-    <h4 class="text-center">Login</h4>
+    <h4 class="text-center">Admin Login</h4>
     <hr>
 
     <form {{action 'authenticate' on='submit'}}>
@@ -17,7 +17,7 @@
       </div>
 
       <div class="form-actions">
-        <input type="submit" class="btn btn-primary" value="Login" {{bind-attr value=loginButtonValue}}>
+        <input type="submit" class="btn btn-primary" {{bind-attr value=loginButtonValue}}>
       </div>
 
     </form>

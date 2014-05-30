@@ -10,9 +10,10 @@ body.frontend {
   }
 
   .panel {
-    margin-top: 40px;
     opacity: 0;
     padding: 10px 30px;
+    max-width: 400px;
+    margin: 40px auto 0 auto;
   }
 
   .body-overlay {
