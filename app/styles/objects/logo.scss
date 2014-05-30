@@ -1,0 +1,13 @@
+.logo {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  a {
+    width: 150px;
+    height: 150px;
+    display: block;
+    text-indent: -999em;
+    background-image: url('/assets/images/momentum-logo.png');
+    background-size: 100%;
+  }
+}

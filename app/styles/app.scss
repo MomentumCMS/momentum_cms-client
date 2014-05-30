@@ -9,9 +9,14 @@ $fa-font-path: "/assets" !default;
 @import "initializers/css-wizardry-grids";
 @import "initializers/dashboard-theme";
 @import "initializers/modifiers";
+@import "initializers/sticky-footer";
 
+@import "objects/singletons/html";
 @import "objects/singletons/loading-screen";
 @import "objects/singletons/header";
 @import "objects/singletons/footer";
 
 @import "objects/forms";
+@import "objects/logo";
+
+@import "views/layouts/frontend";

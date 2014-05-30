@@ -27,6 +27,7 @@ app.import('vendor/ember-data/ember-data.js');
 app.import('vendor/jquery-mockjax/jquery.mockjax.js');
 app.import('vendor/ember-easyForm/index.js');
 app.import('vendor/sinon/index.js');
+app.import('vendor/jquery.transit/jquery.transit.js');
 
 // If the library that you are including contains AMD or ES6 modules that
 // you would like to import into your application please specify an

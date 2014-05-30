@@ -1,19 +1,26 @@
-<h3>Login</h3>
+<div class='panel panel-default'>
+  <div class="panel-body">
 
-<form {{action 'authenticate' on='submit'}}>
+    <h4 class="text-center">Login</h4>
+    <hr>
 
-  <div class="form-group">
-    <label>Email: </label>
-    {{input type='email' value=email}}
+    <form {{action 'authenticate' on='submit'}}>
+
+      <div class="form-group">
+        <label>Email: </label>
+        {{input type='email' value=email}}
+      </div>
+
+      <div class="form-group">
+        <label>Password: </label>
+        {{input type='password' value=password}}
+      </div>
+
+      <div class="form-actions">
+        <input type="submit" class="btn btn-primary" value="Login" {{bind-attr value=loginButtonValue}}>
+      </div>
+
+    </form>
+
   </div>
-
-  <div class="form-group">
-    <label>Password: </label>
-    {{input type='password' value=password}}
-  </div>
-
-  <div class="form-actions">
-    <input type="submit" class="btn btn-primary" value="Login" {{bind-attr value=loginButtonValue}}>
-  </div>
-
-</form>
+</div>
