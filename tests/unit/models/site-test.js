@@ -25,3 +25,9 @@ test('it has the correct attributes', function() {
   ok(attributes.indexOf('createdAt') !== -1);
   ok(attributes.indexOf('updatedAt') !== -1);
 });
+
+test('it returns a random avatar', function() {
+  var Site = this.subject();
+  equal((typeof Site.get('randomAvatar')), 'string', 'a string was returned');
+  equal(Site.get('randomAvatar').match(/avatar/).length, 1, 'A matching item was returned');
+});

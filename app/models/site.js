@@ -7,5 +7,17 @@ export default DS.Model.extend({
   availableLocales: DS.attr(),
   createdAt: DS.attr(),
   updatedAt: DS.attr(),
-  hasMany: DS.hasMany('page')
+  hasMany: DS.hasMany('page'),
+
+  randomAvatar: function() {
+    var avatars = [
+      'avatar_1.jpg',
+      'avatar_2.jpg',
+      'avatar_3.jpg',
+      'avatar_4.jpg',
+      'avatar_5.jpg'
+    ];
+    return '/assets/images/avatars/' + avatars[Math.floor(Math.random() * avatars.length)];
+  }.property()
+
 });

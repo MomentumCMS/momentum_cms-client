@@ -1,1 +1,34 @@
-<h3>Dashboard</h3>
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4">
+
+    <div class="page-header">
+      <h2 class="spacing-top spacing-top-lg">Your Sites</h2>
+    </div>
+
+    <ul class='list-group sites-list'>
+      {{#each site in model.sites}}
+        <div class="list-group-item">
+          <div class="media">
+            <div class="pull-left">
+              {{#link-to 'admin.pages' site}}
+                <img {{bind-attr src=site.randomAvatar}} class="img-circle img-75">
+              {{/link-to}}
+            </div>
+            <div class="media-body">
+              {{#link-to 'admin.pages' site}}
+                <h4>{{site.label}}</h4>
+              {{/link-to}}
+              <a target="_blank" class="site-host" {{bind-attr href=site.host}}>{{site.host}}</a>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+
+    </ul>
+
+    {{#link-to 'admin.sites.new' classNames='btn btn-primary new-site'}}
+      <i class="fa fa-plus"></i> New Site
+    {{/link-to}}
+
+  </div>
+</div>

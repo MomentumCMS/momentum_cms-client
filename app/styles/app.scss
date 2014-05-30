@@ -14,9 +14,11 @@ $fa-font-path: "/assets" !default;
 @import "objects/singletons/html";
 @import "objects/singletons/loading-screen";
 @import "objects/singletons/header";
+@import "objects/singletons/sidebar";
 @import "objects/singletons/footer";
 
 @import "objects/forms";
 @import "objects/logo";
+@import "objects/site-list";
 
 @import "views/layouts/frontend";

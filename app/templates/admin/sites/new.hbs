@@ -1,15 +1,25 @@
-<h3>New Site</h3>
+<div class="row">
+  <div class="col-sm-4 col-sm-offset-4">
 
-{{#form-for model}}
+    <div class="page-header">
+      <h2 class="spacing-top spacing-top-lg">Create a New Site</h2>
+    </div>
 
-  {{input title}}
+    {{#form-for model}}
 
-  {{input label}}
+      {{input title}}
 
-  {{input identifier}}
+      {{input label}}
 
-  {{input host}}
+      {{input identifier}}
 
-  {{submit}}
+      {{input host}}
 
-{{/form-for}}
+      {{submit}}
+
+      {{#link-to 'admin.dashboard' classNames='btn btn-default'}}Cancel{{/link-to}}
+
+    {{/form-for}}
+
+  </div>
+</div>

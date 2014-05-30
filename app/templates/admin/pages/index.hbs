@@ -1,14 +1,24 @@
-<h3>Pages</h3>
+<div class="row">
+  <div class="col-sm-3 col-md-2 sidebar">
+    {{partial 'admin/layout/sidebar'}}
+  </div><!-- .sidebar -->
+  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 
-{{#link-to 'admin.pages.new'}}New Page{{/link-to}}
+    <h3>Pages</h3>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Label</th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
+    {{#link-to 'admin.pages.new'}}New Page{{/link-to}}
+
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Label</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+
+  </div><!-- .main -->
+</div>
+
