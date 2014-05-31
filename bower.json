@@ -15,7 +15,8 @@
     "ember-load-initializers": "stefanpenner/ember-load-initializers#0.0.1",
     "bootstrap-sass-official": "master",
     "font-awesome": "~4.1.0",
-    "jquery.transit": "~0.9.9"
+    "jquery.transit": "~0.9.9",
+    "guidedog": "master"
   },
   "devDependencies": {
     "jquery-mockjax": "~1.5.3",

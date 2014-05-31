@@ -2,6 +2,7 @@
 
 import { test, moduleFor } from 'ember-qunit';
 import mockHttp from '../../helpers/mock-http';
+import mockModel from '../../helpers/mock-model';
 import Authentication from '../../../services/authentication';
 
 moduleFor('route:authenticated', 'Unit - AuthenticatedRoute', {
@@ -34,4 +35,13 @@ test('does not redirect logged in users', function() {
   route.set('authentication', authentication);
   route._redirect();
   ok(!route.transitionTo.called, 'transitionTo was not called');
+});
+
+test('it destroys unsaved model instances on transition if present', function() {
+  var route = this.subject();
+  mockModel.set('isDirty', true);
+  route.set('currentModel', mockModel);
+  route._cleanup();
+  ok(mockModel.transitionTo.calledWith('uncommitted'), 'The model was rolled back');
+  ok(mockModel.deleteRecord.called, 'The model was deleted');
 });

@@ -28,15 +28,6 @@ export default AuthenticatedRoute.extend({
     return model.save().then(function(site) {
       _this.transitionTo('pages.index', site);
     }).catch(function() {});
-  },
-
-  _cleanup: function() {
-    var model = this.get('currentModel');
-    if(model.get('isDirty')) {
-      model.transitionTo('uncommitted');
-      model.deleteRecord();
-    }
-    return true;
   }
 
 });

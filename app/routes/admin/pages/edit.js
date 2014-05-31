@@ -20,6 +20,7 @@ export default AuthenticatedRoute.extend({
 
   _submit: function() {
     var model = this.get('currentModel');
+    model.get('errors').clear();
     return model.save().then(function() {
     }).catch(function() {});
   }

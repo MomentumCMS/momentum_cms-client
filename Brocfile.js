@@ -22,6 +22,12 @@ var fontTree = pickFiles('vendor/font-awesome/fonts', {
   destDir: '/assets'
 });
 
+var guideDog = pickFiles('vendor/guidedog', {
+  srcDir: '/',
+  files: ['guidedog.js', 'lib/*'],
+  destDir: '/assets'
+});
+
 // Use this to add additional libraries to the generated output files.
 app.import('vendor/ember-data/ember-data.js');
 app.import('vendor/jquery-mockjax/jquery.mockjax.js');
@@ -43,4 +49,4 @@ app.import('vendor/ic-ajax/dist/named-amd/main.js', {
   ]
 });
 
-module.exports = mergeTrees([app.toTree(), fontTree]);
+module.exports = mergeTrees([app.toTree(), fontTree, guideDog]);

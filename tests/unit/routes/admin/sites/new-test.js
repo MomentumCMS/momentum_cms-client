@@ -31,6 +31,7 @@ test('it returns a new site model instance', function() {
 test('it destroys unsaved model instances on transition', function() {
   var route = this.subject();
   mockModel.set('isDirty', true);
+  mockModel.set('isNew', true);
   route.set('currentModel', mockModel);
   route._cleanup();
   ok(mockModel.transitionTo.calledWith('uncommitted'), 'The model was rolled back');
