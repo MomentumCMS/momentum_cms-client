@@ -5,7 +5,7 @@ export default AuthenticatedRoute.extend({
   //-- Callbacks ------------------------------------------------------------
 
   model: function() {
-    return this.modelFor('admin.pages');
+    return this.get('store').all('page');
   }
 
 });

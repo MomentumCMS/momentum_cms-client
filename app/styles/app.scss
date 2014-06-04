@@ -4,13 +4,18 @@
  example: <a href="#">Mo'mentum Mo' Problems</a>
 */
 
-
 // Variables
 $fa-font-path: "/assets" !default;
 
+//-- Import vendor SCSS files (not CSS) -------------------------------------
 @import "vendor/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap";
 @import "vendor/font-awesome/scss/font-awesome";
 
+//-- Import vendor CSS (copied manually from vendor) ------------------------
+@import "initializers/vendor/select2";
+@import "initializers/vendor/select2-bootstrap";
+
+//-- Initializers -----------------------------------------------------------
 @import "initializers/typography";
 @import "initializers/clearfix";
 @import "initializers/css-wizardry-grids";
@@ -18,14 +23,17 @@ $fa-font-path: "/assets" !default;
 @import "initializers/modifiers";
 @import "initializers/sticky-footer";
 
+//-- Singleton Objects ------------------------------------------------------
 @import "objects/singletons/html";
 @import "objects/singletons/loading-screen";
 @import "objects/singletons/header";
 @import "objects/singletons/sidebar";
 @import "objects/singletons/footer";
 
+//-- Reuseable Objects ------------------------------------------------------
 @import "objects/forms";
 @import "objects/logo";
 @import "objects/site-list";
 
+//-- Layouts and Views ------------------------------------------------------
 @import "views/layouts/frontend";

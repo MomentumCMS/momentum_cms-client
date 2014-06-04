@@ -1,8 +1,21 @@
+import easyFormSelect2View from 'momentum-client/views/easyForm/select2';
+
 export default {
   name: 'easyForm',
   initialize: function() {
 
+    //-- Custom Elements ----------------------------------------------------
+    Ember.EasyForm.Config.registerInputType('select2', easyFormSelect2View);
+
     Ember.EasyForm.Input.reopen({
+      // https://github.com/dockyard/ember-easyForm/issues/118
+      bindableInputOptions: [
+        'accept', 'align', 'alt', 'autocomplete', 'autofocus',
+        'checked', 'disabled', 'form', 'formaction', 'formenctype',
+        'formmethod', 'formnovalidate', 'formtarget', 'height', 'list',
+        'max', 'maxlength', 'min', 'multiple', 'pattern', 'placeholder',
+        'prompt', 'readonly', 'required', 'size', 'src', 'step', 'width', 'content'
+      ],
       errorsChanged: function() {
         this.set('hasFocusedOut', true);
         this.showValidationError();
@@ -35,13 +48,15 @@ export default {
 
     //-- Bootstrap 3 Class Names --------------------------------------------
     //-- https://github.com/dockyard/ember-easyForm/issues/47
+    //-- https://github.com/dockyard/ember-easyForm/issues/139
+
     Ember.TextSupport.reopen({
       classNames: ['form-control']
     });
 
     Ember.EasyForm.Config.registerWrapper('default', {
       inputTemplate: 'form-fields/input',
-
+      baseViewClassNameBinding: false,
       labelClass: 'control-label',
       inputClass: 'form-group',
       buttonClass: 'btn btn-primary',

@@ -13,6 +13,9 @@ export default AuthenticatedRoute.extend({
   actions: {
     submit: function() {
       this._submit();
+    },
+    deleteRecord: function(model) {
+      this._destroyPage(model);
     }
   },
 
@@ -23,6 +26,14 @@ export default AuthenticatedRoute.extend({
     model.get('errors').clear();
     return model.save().then(function() {
     }).catch(function() {});
+  },
+
+  _destroyPage: function(model) {
+    var _this = this;
+    model.deleteRecord();
+    return model.save().then(function() {
+      _this.transitionTo('admin.pages.index');
+    });
   }
 
 });

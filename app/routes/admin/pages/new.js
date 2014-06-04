@@ -5,7 +5,12 @@ export default AuthenticatedRoute.extend({
   //-- Callbacks ------------------------------------------------------------
 
   model: function() {
-    return this.store.createRecord('page');
+    var store = this.store;
+    return Ember.RSVP.hash({
+      page: store.createRecord('page'),
+      templates: this.modelFor('admin.pages').templates,
+      site: this.modelFor('admin.pages').site
+    });
   },
 
   //-- Actions --------------------------------------------------------------
@@ -23,10 +28,11 @@ export default AuthenticatedRoute.extend({
 
   _submit: function() {
     var _this = this;
-    var model = this.get('currentModel');
+    var model = this.get('currentModel.page');
+    model.set('site', this.get('currentModel.site'));
     model.get('errors').clear();
     return model.save().then(function(site) {
-      _this.transitionTo('pages.index', site);
+      _this.transitionTo('admin.pages.index', site);
     }).catch(function() {});
   }
 

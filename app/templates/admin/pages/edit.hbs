@@ -16,9 +16,11 @@
 
       {{input slug}}
 
-      {{submit valueBinding=submitValue}}
+      {{submit value=submitValue}}
 
       {{#link-to 'admin.pages.index' classNames='btn btn-default'}}Cancel{{/link-to}}
+
+      <a href="#delete" class="btn btn-danger" {{action 'deleteRecord' model}}>Delete</a>
 
     {{/form-for}}
 

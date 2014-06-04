@@ -2,12 +2,19 @@ import AuthenticatedRoute from './authenticated';
 
 export default AuthenticatedRoute.extend({
 
+  //-- Properties -----------------------------------------------------------
+
+  site: function() {
+    return this.get('currentSite.site');
+  }.property('currentSite.site'),
+
   //-- Callbacks ------------------------------------------------------------
 
   model: function() {
     return new Ember.RSVP.hash({
       sites: this.get('store').find('site'),
-      templates: this.get('store').find('template')
+      templates: this.get('store').find('template'),
+      localeDictionary: $.getJSON(ENV.API_URL + '/locales')
     });
   },
 
@@ -23,5 +30,6 @@ export default AuthenticatedRoute.extend({
       this.transitionTo('admin.sites.new');
     }
   }
+
 
 });

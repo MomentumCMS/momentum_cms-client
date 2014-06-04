@@ -16,7 +16,8 @@
     "bootstrap-sass-official": "master",
     "font-awesome": "~4.1.0",
     "jquery.transit": "~0.9.9",
-    "guidedog": "master"
+    "guidedog": "master",
+    "select2": "~3.4.8"
   },
   "devDependencies": {
     "jquery-mockjax": "~1.5.3",

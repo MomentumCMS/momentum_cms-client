@@ -35,3 +35,9 @@ test('it does not redirect users if there are sites present', function() {
   route.afterModel();
   ok(!route.transitionTo.called, 'The user was not redirected to the new site path');
 });
+
+test('it has a site proxy for the currentSite property', function() {
+  var route = this.subject();
+  route.set('currentSite', Ember.Object.create({site: 'test'}));
+  equal(route.get('site'), 'test', 'The site property returned the correct value');
+});

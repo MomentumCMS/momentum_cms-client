@@ -8,13 +8,22 @@
       <h3>Add New Page</h3>
     </div>
 
-    {{#form-for model}}
+    {{#form-for model.page}}
 
       {{input label}}
 
       {{input identifier}}
 
       {{input slug}}
+
+      {{input template
+        as="select"
+        collection="controller.model.templates"
+        selection="template"
+        optionValuePath="content.id"
+        optionLabelPath="content.label"
+        prompt="Select Template"
+      }}
 
       {{submit}}
 
