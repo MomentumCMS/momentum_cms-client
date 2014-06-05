@@ -7,7 +7,9 @@ moduleFor('view:easyForm/select2', 'Unit - Select2 View', {
   setup: function() {
     App = startApp();
   },
-  teardown: function() {}
+  teardown: function() {
+    $('input').select2('destroy');
+  }
 });
 
 test('it exists', function() {

@@ -4,7 +4,7 @@ export default DS.Model.extend({
   identifier: DS.attr('string'),
   host: DS.attr('string'),
   defaultLocale: DS.attr(),
-  availableLocales: DS.attr(),
+  availableLocales: DS.attr('array'),
   createdAt: DS.attr(),
   updatedAt: DS.attr(),
   hasMany: DS.hasMany('page'),

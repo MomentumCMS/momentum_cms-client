@@ -9,14 +9,16 @@
     <nav>
 
       <ul class="nav navbar-nav navbar-right">
-       <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Locale <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            {{#each locale in currentSite.site.availableLocales}}
-              <li role="presentation"><a href="#" {{action 'setLocale' locale}}>{{locale-for locale}}</a></li>
-            {{/each}}
-          </ul>
-        </li>
+        {{#if currentSite.site.availableLocales}}
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Locale <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              {{#each locale in currentSite.site.availableLocales}}
+                <li role="presentation"><a href="#" {{action 'setLocale' locale}}>{{locale-for locale}}</a></li>
+              {{/each}}
+            </ul>
+          </li>
+        {{/if}}
         {{#link-to 'admin.account' tagName='li'}}<a href='#'>Account</a>{{/link-to}}
         <li><a href="#logout" {{action 'logout'}}>Logout</a></li>
       </ul>

@@ -1,9 +1,15 @@
 import { test, moduleForModel } from 'ember-qunit';
-
+import arrayTransform from 'momentum-client/transforms/array';
 
 moduleForModel('site', 'Unit - Site Model', {
-  needs: ['model:page']
+  needs: ['model:page', 'transform:array']
 });
+
+
+//  function(container, context) {
+//   var mockStore = new DS.Store();
+//   container.register('store:main', DS.Store, {singleton: true});
+// });
 
 
 test('it exists', function() {
@@ -11,9 +17,9 @@ test('it exists', function() {
 });
 
 test('it has the correct attributes', function() {
-  var Site = this.subject();
+  var site = this.subject();
   var attributes = [];
-  Site.eachAttribute(function(name, meta) {
+  site.eachAttribute(function(name, meta) {
     attributes.push(name);
   });
   ok(attributes.indexOf('title') !== -1);
@@ -27,7 +33,7 @@ test('it has the correct attributes', function() {
 });
 
 test('it returns a random avatar', function() {
-  var Site = this.subject();
-  equal((typeof Site.get('randomAvatar')), 'string', 'a string was returned');
-  equal(Site.get('randomAvatar').match(/avatar/).length, 1, 'A matching item was returned');
+  var site = this.subject();
+  equal((typeof site.get('randomAvatar')), 'string', 'a string was returned');
+  equal(site.get('randomAvatar').match(/avatar/).length, 1, 'A matching item was returned');
 });
