@@ -16,6 +16,17 @@ export default Ember.EasyForm.TextField.extend({
           }
         });
         query.callback(data);
+      },
+      initSelection: function(element, callback) {
+        var data = [];
+        var locales = $(element).val().split(',');
+        locales = locales.filter(function(item) {return item !== '';});
+        $.each(_this.get('content'), function(index, item) {
+          if(locales.indexOf(item.id) !== -1) {
+            data.push(item);
+          }
+        });
+        callback(data);
       }
     });
   },

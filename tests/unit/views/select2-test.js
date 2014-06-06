@@ -35,3 +35,14 @@ test('it initializes the select2 with the content bound to the element', functio
     equal($('.select2-result-label').length, 1, 'The content was set correctly');
   });
 });
+
+test('it initializes with the correct values', function() {
+  var view = this.subject();
+  view.set('value', 'en,fr');
+  view.set('content', [{id: 'en', text: 'English'}, {id: 'fr', text: 'French'}]);
+  Ember.run(function() {
+    view.appendTo(App.rootElement);
+  });
+  equal($('.select2-search-choice div:eq(0)').text(), 'English', 'English was preselected');
+  equal($('.select2-search-choice div:eq(1)').text(), 'French', 'French was preselected');
+});
