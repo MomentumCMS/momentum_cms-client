@@ -20,3 +20,17 @@ test('it returns the site model from admin.site', function() {
   route.model();
   ok(route.modelFor.calledWith('admin.site'), 'The correct model was called');
 });
+
+test('the default submitValue is correct', function() {
+  var route = this.subject();
+  equal('Save', route.get('submitValue'), 'The submitValue was set correctly');
+});
+
+test('it saves the model currentModel', function() {
+  var route = this.subject();
+  route.set('currentModel', mockModel);
+  route.set('controller', Ember.Object.create());
+  return route._update().then(function() {
+    equal(route.get('controller.submitValue'), 'Save', 'The value was reset properly');
+  });
+});
