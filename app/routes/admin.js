@@ -1,4 +1,4 @@
-import AuthenticatedRoute from './authenticated';
+import AuthenticatedRoute from 'momentum-client/routes/authenticated';
 
 export default AuthenticatedRoute.extend({
 

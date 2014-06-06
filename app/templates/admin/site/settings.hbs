@@ -1,0 +1,26 @@
+<div class="page-header">
+  <h3>Settings</h3>
+</div>
+
+{{#form-for model}}
+
+  {{input title}}
+
+  {{input label}}
+
+  {{input identifier}}
+
+  {{input host}}
+
+  {{input availableLocales as="select2"
+    content=controller.availableLocales
+    optionLabelPath="content.localeName"
+    optionValuePath="content.locale"
+    prompt="Choose Available Locales"
+  }}
+
+  {{submit}}
+
+  {{#link-to 'admin.dashboard' classNames='btn btn-default'}}Cancel{{/link-to}}
+
+{{/form-for}}
