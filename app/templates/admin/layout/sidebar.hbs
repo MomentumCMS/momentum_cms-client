@@ -16,5 +16,11 @@
 
   <li><a href="#"><i class="fa fa-camera-retro fa-fw fa-lg"></i> Assets</a></li>
 
-  <li><a href="#"><i class="fa fa-cog fa-fw fa-lg"></i> Settings</a></li>
+  {{#link-to 'admin.site.settings' tagName="li"}}
+    <a href="#">
+      <i class="fa fa-cog fa-fw fa-lg"></i>
+      Settings
+    </a>
+  {{/link-to}}
+
 </ul>

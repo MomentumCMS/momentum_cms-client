@@ -43,6 +43,6 @@ test('it saves the site and redirects the user to pages.index', function() {
   route.set('currentModel', mockModel);
   route.transitionTo = sinon.spy();
   return route._submit().then(function() {
-    ok(route.transitionTo.calledWithExactly('pages.index', mockModel), 'transitionTo was called');
+    ok(route.transitionTo.calledWithExactly('admin.pages.index', mockModel.id), 'transitionTo was called');
   });
 });

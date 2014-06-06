@@ -15,11 +15,14 @@ test('it exists', function() {
   ok(this.subject());
 });
 
-test('it pulls the model from the admin.pages route', function() {
+test('it finds pages for the current site', function() {
   var route = this.subject();
+  route.modelFor = function() {
+    return {site: {id: 1}};
+  };
   route.set('store', {
-    all: sinon.spy()
+    find: sinon.spy()
   });
   route.model();
-  ok(route.get('store').all.calledWith('page'), 'It returns pages from the store');
+  ok(route.get('store').find.calledWithExactly('page', {site_id: 1}), 'It returns pages from the store');
 });

@@ -26,7 +26,7 @@ export default AuthenticatedRoute.extend({
     var model = this.get('currentModel');
     model.get('errors').clear();
     return model.save().then(function(site) {
-      _this.transitionTo('pages.index', site);
+      _this.transitionTo('admin.pages.index', site.id);
     }).catch(function() {});
   }
 

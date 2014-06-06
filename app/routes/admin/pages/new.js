@@ -8,8 +8,8 @@ export default AuthenticatedRoute.extend({
     var store = this.store;
     return Ember.RSVP.hash({
       page: store.createRecord('page'),
-      templates: this.modelFor('admin.pages').templates,
-      site: this.modelFor('admin.pages').site
+      templates: this.modelFor('admin.site').templates,
+      site: this.modelFor('admin.site').site
     });
   },
 
@@ -31,8 +31,8 @@ export default AuthenticatedRoute.extend({
     var model = this.get('currentModel.page');
     model.set('site', this.get('currentModel.site'));
     model.get('errors').clear();
-    return model.save().then(function(site) {
-      _this.transitionTo('admin.pages.index', site);
+    return model.save().then(function() {
+      _this.transitionTo('admin.pages.index');
     }).catch(function() {});
   }
 
