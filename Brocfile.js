@@ -1,7 +1,7 @@
 /* global require, module */
-var pickFiles = require('broccoli-static-compiler');
+var pickFiles  = require('broccoli-static-compiler');
 var mergeTrees = require('broccoli-merge-trees');
-var EmberApp = require('ember-cli/lib/broccoli/ember-app');
+var EmberApp   = require('ember-cli/lib/broccoli/ember-app');
 
 var app = new EmberApp({
   name: require('./package.json').name,
@@ -36,11 +36,19 @@ var select2 = pickFiles('vendor/select2', {
   destDir: '/assets'
 });
 
-// Use this to add additional libraries to the generated output files.
-app.import('vendor/ember-data/ember-data.js');
-app.import('vendor/jquery-mockjax/jquery.mockjax.js');
+
+//-- Legacy File Imports ----------------------------------------------------
+
+app.import({
+  development: 'vendor/ember-data/ember-data.js',
+  production:  'vendor/ember-data/ember-data.prod.js'
+});
+
+app.import({development: 'vendor/jquery-mockjax/jquery.mockjax.js'});
+app.import({development: 'vendor/sinon/index.js'});
+
+
 app.import('vendor/ember-easyForm/index.js');
-app.import('vendor/sinon/index.js');
 app.import('vendor/jquery.transit/jquery.transit.js');
 
 // Bootstrap components
