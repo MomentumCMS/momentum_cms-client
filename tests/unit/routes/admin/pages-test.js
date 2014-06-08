@@ -17,13 +17,3 @@ test('the model returns the admin.site model', function() {
   route.model();
   ok(route.modelFor.calledWith('admin.site'));
 });
-
-test('the afterModel sets the currentSite property on the admin route', function() {
-  var route = this.subject();
-  route.set('currentSite', Ember.Object.create());
-  var mockModel = {
-    site: 'worked'
-  };
-  route.afterModel(mockModel);
-  equal(route.get('currentSite.site'), 'worked', 'The currentSite was set correctly');
-});

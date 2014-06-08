@@ -22,8 +22,9 @@ export default AuthenticatedRoute.extend({
     var _this = this;
     var model = this.get('currentModel');
     this.get('controller').set('submitValue', 'Saving...');
-    return model.save().then(function() {
+    return model.save().then(function(model) {
       _this.get('controller').set('submitValue', 'Save');
+      _this.set('currentSite.persistedLocales', model.get('availableLocales'));
     }, function() {
       // catch
     });

@@ -1,3 +1,1 @@
-export default Ember.Controller.extend({
-  queryParams: ['locale']
-});
+export default Ember.Controller.extend({});

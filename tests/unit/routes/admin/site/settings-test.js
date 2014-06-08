@@ -34,3 +34,14 @@ test('it saves the model currentModel', function() {
     equal(route.get('controller.submitValue'), 'Save', 'The value was reset properly');
   });
 });
+
+test('it updates the persistedLocales after saving', function() {
+  var route = this.subject();
+  mockModel.set('availableLocales', ['en', 'fr']);
+  route.set('currentModel', mockModel);
+  route.set('currentSite', Ember.Object.create());
+  route.set('controller', Ember.Object.create());
+  return route._update().then(function() {
+    equal(route.get('currentSite.persistedLocales')[0], 'en', 'The persistedLocales were updated');
+  });
+});
