@@ -28,6 +28,11 @@ test('the default submitValue is correct', function() {
 
 test('it saves the model currentModel', function() {
   var route = this.subject();
+   route.modelFor = function() {
+    return {localeDictionary: {en: ['English'], fr: ['French']}};
+  };
+  mockModel.set('availableLocales', ['en', 'fr']);
+  route.set('currentSite', Ember.Object.create());
   route.set('currentModel', mockModel);
   route.set('controller', Ember.Object.create());
   return route._update().then(function() {
@@ -37,11 +42,17 @@ test('it saves the model currentModel', function() {
 
 test('it updates the persistedLocales after saving', function() {
   var route = this.subject();
+  route.modelFor = function() {
+    return {localeDictionary: {en: ['English'], fr: ['French']}};
+  };
   mockModel.set('availableLocales', ['en', 'fr']);
   route.set('currentModel', mockModel);
   route.set('currentSite', Ember.Object.create());
   route.set('controller', Ember.Object.create());
   return route._update().then(function() {
-    equal(route.get('currentSite.persistedLocales')[0], 'en', 'The persistedLocales were updated');
+    equal(route.get('currentSite.persistedLocales')[0].id, 'en', 'The first persistedLocales id was updated');
+    equal(route.get('currentSite.persistedLocales')[0].text, 'English', 'The first persistedLocales text was updated');
+    equal(route.get('currentSite.persistedLocales')[1].id, 'fr', 'The second persistedLocales id was updated');
+    equal(route.get('currentSite.persistedLocales')[1].text, 'French', 'The second persistedLocales text was updated');
   });
 });

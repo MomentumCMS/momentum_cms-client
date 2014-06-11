@@ -3,7 +3,7 @@ import { test, moduleFor } from 'ember-qunit';
 import startApp from '../../helpers/start-app';
 var App;
 
-moduleFor('view:easyForm/select2', 'Unit - Select2 View', {
+moduleFor('view:easyForm/multi-select2', 'Unit - MultiSelect2View', {
   setup: function() {
     App = startApp();
   },

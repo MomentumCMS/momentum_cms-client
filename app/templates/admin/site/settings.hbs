@@ -12,15 +12,21 @@
 
   {{input host}}
 
-  {{input availableLocales as="select2"
+  {{input availableLocales as="multi-select2"
     content=controller.availableLocales
-    optionLabelPath="content.localeName"
-    optionValuePath="content.locale"
     prompt="Choose Available Locales"
   }}
 
-  {{submit value=controller.submitValue}}
+  {{input defaultLocale as="default-locale-select"
+    content=availableDefaultLocales
+    optionValuePath="content.id"
+    optionLabelPath="content.text"
+    prompt="Choose a Default Locale"
+  }}
 
-  {{#link-to 'admin.dashboard' classNames='btn btn-default'}}Cancel{{/link-to}}
+  <div class="form-actions">
+    <input type="submit" class="btn btn-primary" {{bind-attr value=controller.submitValue}} {{action 'submit'}}>
+    {{#link-to 'admin.dashboard' classNames='btn btn-default'}}Cancel{{/link-to}}
+  </div>
 
 {{/form-for}}

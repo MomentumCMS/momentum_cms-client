@@ -3,7 +3,7 @@ export default DS.Model.extend({
   label: DS.attr('string'),
   identifier: DS.attr('string'),
   host: DS.attr('string'),
-  defaultLocale: DS.attr(),
+  defaultLocale: DS.attr('string'),
   availableLocales: DS.attr('array'),
   createdAt: DS.attr(),
   updatedAt: DS.attr(),

@@ -22,14 +22,16 @@ test('it exists', function() {
 
 test('it redirects users to the new site path if no sites exist', function() {
   var route = this.subject();
+  route.set('currentSite', Ember.Object.create());
   route.transitionTo = sinon.spy();
   route.store.all = function() { return Ember.A([]); };
   route.afterModel();
   ok(route.transitionTo.calledWith('admin.sites.new'), 'The user was transition to the new site path');
 });
 
-test('it does not redirect users if there are sites present', function() {
+test('it does not redirect users if there are sites present and sets the localeDictionary property on the currentSite', function() {
   var route = this.subject();
+  route.set('currentSite', Ember.Object.create());
   route.transitionTo = sinon.spy();
   route.store.all = function() { return Ember.A(['site']); };
   route.afterModel();

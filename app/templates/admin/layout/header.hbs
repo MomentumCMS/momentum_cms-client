@@ -14,7 +14,7 @@
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Locale <b class="caret"></b></a>
             <ul class="dropdown-menu">
               {{#each locale in currentSite.persistedLocales}}
-                <li role="presentation"><a href="#" {{action 'setLocale' locale}}>{{locale-for locale}}</a></li>
+                <li role="presentation"><a href="#" {{action 'setLocale' locale}}>{{locale.text}}</a></li>
               {{/each}}
             </ul>
           </li>

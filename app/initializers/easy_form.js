@@ -1,11 +1,13 @@
-import easyFormSelect2View from 'momentum-client/views/easyForm/select2';
+import easyFormMultiSelect2View from 'momentum-client/views/easyForm/multi-select2';
+import easyFormDefaultLocaleSelect from 'momentum-client/views/easyForm/default-locale-select';
 
 export default {
   name: 'easyForm',
   initialize: function() {
 
     //-- Custom Elements ----------------------------------------------------
-    Ember.EasyForm.Config.registerInputType('select2', easyFormSelect2View);
+    Ember.EasyForm.Config.registerInputType('multi-select2', easyFormMultiSelect2View);
+    Ember.EasyForm.Config.registerInputType('default-locale-select', easyFormDefaultLocaleSelect);
 
     Ember.EasyForm.Input.reopen({
       // https://github.com/dockyard/ember-easyForm/issues/118

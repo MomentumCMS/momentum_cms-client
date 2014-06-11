@@ -44,12 +44,14 @@ test('the afterModel sets the global currentSite property as well as persistedLo
   var mockModel = {
     site: Ember.Object.create({
       title: 'example',
-      availableLocales: ['en', 'fr']
+      availableLocales: ['en', 'fr'],
     }),
+    localeDictionary: {en: ['English']}
   };
   route.afterModel(mockModel);
   equal(route.get('currentSite.site.title'), 'example', 'The currentSite was set correctly');
-  equal(route.get('currentSite.persistedLocales')[0], 'en', 'The persistedLocales was set correctly');
+  equal(route.get('currentSite.persistedLocales')[0].id, 'en', 'The persistedLocales id was set correctly');
+  equal(route.get('currentSite.persistedLocales')[0].text, 'English', 'The persistedLocales text was set correctly');
 });
 
 test('the willTransition callback unsets the currentSite and persistedLocales if no site_id is present in the params object', function() {

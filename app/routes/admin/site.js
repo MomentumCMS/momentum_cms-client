@@ -1,4 +1,5 @@
 import AuthenticatedRoute from '../authenticated';
+import LocaleTools from 'momentum-client/utils/locale-tools';
 
 export default AuthenticatedRoute.extend({
 
@@ -15,9 +16,10 @@ export default AuthenticatedRoute.extend({
   },
 
   afterModel: function(model) {
+    var localeTools = LocaleTools.create({localeDictionary: model.localeDictionary});
     this.get('currentSite').setProperties({
       'site': model.site,
-      'persistedLocales': model.site.get('availableLocales')
+      'persistedLocales': localeTools.localeObjectsFor(model.site.get('availableLocales'))
     });
   },
 
