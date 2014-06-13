@@ -15,7 +15,6 @@
     "ember-load-initializers": "stefanpenner/ember-load-initializers#0.0.2",
     "ember-qunit-notifications": "^0.0.1",
     "ember-cli-test-loader": "rjackson/ember-cli-test-loader#0.0.2",
-
     "ember-easyForm": "http://builds.dockyard.com.s3.amazonaws.com/ember-easyForm/release/ember-easyForm.js",
     "bootstrap-sass-official": "master",
     "font-awesome": "~4.1.0",
@@ -26,5 +25,8 @@
   "devDependencies": {
     "jquery-mockjax": "~1.5.3",
     "sinon": "http://sinonjs.org/releases/sinon-1.7.3.js"
+  },
+  "resolutions": {
+    "ember": "e-tag:b56a616d8"
   }
 }
