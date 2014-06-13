@@ -15,11 +15,16 @@
 
       {{input host}}
 
-      {{input availableLocales as="select2"
+      {{input availableLocales as="multi-select2"
         content=controller.availableLocales
-        optionLabelPath="content.localeName"
-        optionValuePath="content.locale"
         prompt="Choose Available Locales"
+      }}
+
+      {{input defaultLocale as="default-locale-select"
+        content=availableDefaultLocales
+        optionValuePath="content.id"
+        optionLabelPath="content.text"
+        prompt="Choose a Default Locale"
       }}
 
       {{submit}}
