@@ -6,4 +6,5 @@ before_script:
   - npm install -g bower
   - bower install
   - npm install
+  - cp vendor/ember/index.js vendor/ember/ember.js
 script: ember test

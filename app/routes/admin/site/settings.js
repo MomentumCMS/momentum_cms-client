@@ -14,6 +14,15 @@ export default AuthenticatedRoute.extend({
   actions: {
     submit: function(e) {
       this._update(e);
+    },
+    delete: function(e) {
+      this._delete(e);
+    },
+    willTransition: function() {
+      this.disconnectOutlet({
+        outlet: 'modal',
+        parentView: 'application'
+      });
     }
   },
 
@@ -30,7 +39,15 @@ export default AuthenticatedRoute.extend({
     }, function() {
       // catch
     });
-  }
+  },
 
+  _delete: function() {
+    var _this = this;
+    var model = this.get('currentModel');
+    model.deleteRecord();
+    return model.save().then(function() {
+      _this.transitionTo('admin.dashboard');
+    });
+  }
 
 });

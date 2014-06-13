@@ -31,5 +31,4 @@ export default AuthenticatedRoute.extend({
     }
   }
 
-
 });

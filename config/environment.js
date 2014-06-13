@@ -17,8 +17,8 @@ module.exports = function(environment) {
   if (environment === 'development') {
     // LOG_MODULE_RESOLVER is needed for pre-1.6.0
     ENV.LOG_MODULE_RESOLVER = true;
-    ENV.API_URL = 'http://momentum-cms.dev/api/admin';
-    ENV.SESSIONS_URL = 'http://momentum-cms.dev/api';
+    ENV.API_URL = 'http://momentum-cms.dev/api/v1/admin';
+    ENV.SESSIONS_URL = 'http://momentum-cms.dev/api/v1';
     ENV.APP.LOG_RESOLVER = true;
     ENV.APP.LOG_ACTIVE_GENERATION = true;
     ENV.APP.LOG_MODULE_RESOLVER = true;
@@ -34,7 +34,6 @@ module.exports = function(environment) {
   if (environment === 'production') {
 
   }
-  debugger;
 
   return ENV;
 };

@@ -9,12 +9,14 @@
 
     {{BASE_TAG}}
 
+    <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/momentum-client.css">
   </head>
   <body>
     <script>
       window.ENV = {{ENV}};
     </script>
+    <script src="assets/vendor.js"></script>
     <script src="assets/momentum-client.js"></script>
     <script>
       window.MomentumClient = require('momentum-client/app')['default'].create(ENV.APP);

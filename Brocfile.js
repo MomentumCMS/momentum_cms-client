@@ -52,7 +52,10 @@ app.import('vendor/ember-easyForm/index.js');
 app.import('vendor/jquery.transit/jquery.transit.js');
 
 // Bootstrap components
+app.import('vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js');
 app.import('vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js');
+app.import('vendor/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js');
+
 
 // If the library that you are including contains AMD or ES6 modules that
 // you would like to import into your application please specify an

@@ -26,7 +26,8 @@
 
   <div class="form-actions">
     <input type="submit" class="btn btn-primary" {{bind-attr value=controller.submitValue}} {{action 'submit'}}>
-    {{#link-to 'admin.dashboard' classNames='btn btn-default'}}Cancel{{/link-to}}
+    {{#link-to 'admin.pages' classNames='btn btn-default'}}Cancel{{/link-to}}
+    <a class="btn btn-danger pull-right" href="#" {{action 'openModal' 'admin/modals/confirm'}}>Delete Site</a>
   </div>
 
 {{/form-for}}

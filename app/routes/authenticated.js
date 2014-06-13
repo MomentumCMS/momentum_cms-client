@@ -10,7 +10,7 @@ export default Ember.Route.extend({
 
   _redirect: function() {
     if(this.get('authentication.loggedIn') !== true) {
-      this.transitionTo('session');
+      this.transitionTo('frontend.session');
     }
   },
 

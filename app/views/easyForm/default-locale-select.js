@@ -11,7 +11,10 @@ export default Ember.EasyForm.Select.extend({
   setSelectedOption: function() {
     var _this = this;
     Ember.run.later(function() {
-      _this.$('option[value="' + _this.get('value') + '"]').attr('selected', 'selected');
+      var element = _this.$('option[value="' + _this.get('value') + '"]');
+      if(typeof element !== 'undefined' && element.length > 0) {
+        element.attr('selected', 'selected');
+      }
     });
   }.observes('context.model.availableLocales')
 
