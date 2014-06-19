@@ -15,7 +15,7 @@ export default AuthenticatedRoute.extend({
       this._submit(e);
     },
     willTransition: function() {
-      this._cleanup();
+      this._cleanup(this.get('currentModel'));
     }
   },
 

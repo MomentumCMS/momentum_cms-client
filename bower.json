@@ -20,13 +20,14 @@
     "font-awesome": "~4.1.0",
     "jquery.transit": "~0.9.9",
     "guidedog": "master",
-    "select2": "~3.4.8"
+    "select2": "~3.4.8",
+    "ember-forms": "*"
   },
   "devDependencies": {
     "jquery-mockjax": "~1.5.3",
     "sinon": "http://sinonjs.org/releases/sinon-1.7.3.js"
   },
   "resolutions": {
-    "ember": "e-tag:b56a616d8"
+    "ember": "e-tag:7c86bb3b1"
   }
 }

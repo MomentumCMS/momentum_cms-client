@@ -14,8 +14,7 @@ export default Ember.Route.extend({
     }
   },
 
-  _cleanup: function() {
-    var model = this.get('currentModel');
+  _cleanup: function(model) {
     if(typeof model !== 'undefined' && model.get('isDirty') && model.get('isNew')) {
       model.transitionTo('uncommitted');
       model.deleteRecord();

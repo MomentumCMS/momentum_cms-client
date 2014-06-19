@@ -47,7 +47,6 @@ app.import({
 app.import({development: 'vendor/jquery-mockjax/jquery.mockjax.js'});
 app.import({development: 'vendor/sinon/index.js'});
 
-
 app.import('vendor/ember-easyForm/index.js');
 app.import('vendor/jquery.transit/jquery.transit.js');
 

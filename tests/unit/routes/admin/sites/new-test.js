@@ -33,7 +33,7 @@ test('it destroys unsaved model instances on transition', function() {
   mockModel.set('isDirty', true);
   mockModel.set('isNew', true);
   route.set('currentModel', mockModel);
-  route._cleanup();
+  route._cleanup(mockModel);
   ok(mockModel.transitionTo.calledWith('uncommitted'), 'The model was rolled back');
   ok(mockModel.deleteRecord.called, 'The model was deleted');
 });
