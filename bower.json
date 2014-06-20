@@ -21,7 +21,8 @@
     "jquery.transit": "~0.9.9",
     "guidedog": "master",
     "select2": "~3.4.8",
-    "ember-forms": "*"
+    "ember-forms": "*",
+    "plupload": "https://github.com/moxiecode/plupload/archive/v2.1.2.zip"
   },
   "devDependencies": {
     "jquery-mockjax": "~1.5.3",

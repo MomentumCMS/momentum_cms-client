@@ -14,7 +14,12 @@
 
   <li><a href="#"><i class="fa fa-file-code-o fa-fw fa-lg"></i> Templates</a></li>
 
-  <li><a href="#"><i class="fa fa-camera-retro fa-fw fa-lg"></i> Assets</a></li>
+  {{#link-to 'admin.assets.index' tagName="li"}}
+    <a href="#">
+      <i class="fa fa-camera-retro fa-fw fa-lg"></i>
+      Assets
+    </a>
+  {{/link-to}}
 
   {{#link-to 'admin.site.settings' tagName="li"}}
     <a href="#">

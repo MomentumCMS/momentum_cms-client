@@ -28,6 +28,12 @@ var guideDog = pickFiles('vendor/guidedog', {
   destDir: '/assets'
 });
 
+var plupload = pickFiles('vendor/plupload', {
+  srcDir: '/',
+  files: ['js/Moxie.swf', 'js/Moxie.xap'],
+  destDir: '/assets'
+});
+
 // Select2
 app.import('vendor/select2/select2.js');
 var select2 = pickFiles('vendor/select2', {
@@ -47,6 +53,7 @@ app.import({
 app.import({development: 'vendor/jquery-mockjax/jquery.mockjax.js'});
 app.import({development: 'vendor/sinon/index.js'});
 
+app.import('vendor/plupload/js/plupload.full.min.js');
 app.import('vendor/ember-easyForm/index.js');
 app.import('vendor/jquery.transit/jquery.transit.js');
 
@@ -70,4 +77,4 @@ app.import('vendor/ic-ajax/dist/named-amd/main.js', {
   ]
 });
 
-module.exports = mergeTrees([app.toTree(), fontTree, guideDog, select2]);
+module.exports = mergeTrees([app.toTree(), fontTree, guideDog, select2, plupload]);

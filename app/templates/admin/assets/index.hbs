@@ -1,0 +1,26 @@
+<div class="page-header">
+  <h3>Assets</h3>
+</div>
+
+{{asset-uploader}}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each asset in model}}
+      <tr>
+        <td>
+          {{asset.title}}
+        </td>
+        <td>
+          {{asset.description}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
