@@ -6,6 +6,7 @@
     background: #efefef;
     border: 2px dashed darken(#efefef, 10);
     border-radius: 4px;
+    margin-bottom: 15px;
   }
   .progress {
     position: absolute;
@@ -19,5 +20,31 @@
   }
   .progress-bar {
     transition: opacity 0.2s ease;
+  }
+  .plupload-image {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    border-radius: 4px;
+    opacity: 0;
+    transition: opacity 1s ease;
+  }
+  .controls {
+    position: absolute;
+    bottom: 10px;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .controls-inner {
+    padding: 8px;
+    z-index: 1000;
+    position: relative;
+    border-radius: 4px;
+    margin: 0 auto;
+    width: auto;
+    display: inline-block;
+    background: rgba(0,0,0,0.3);
   }
 }

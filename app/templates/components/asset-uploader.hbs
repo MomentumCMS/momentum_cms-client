@@ -2,8 +2,17 @@
 
   <div class="plupload-dropelement">
 
+    <div class="plupload-image"></div>
+
+    <div class="controls">
+      <div class="controls-inner">
+        <a href="#" class="btn btn-default btn-xs" {{action 'triggerDelete'}}>Delete</a>
+      </div>
+    </div>
+
     <div class="progress">
       <div class="plupload-progress-bar progress-bar" role="progressbar" style="width: 0%;">
+        <span class="plupload-processing">processing...</span>
       </div>
     </div>
 

@@ -2,7 +2,7 @@
   <h3>Assets</h3>
 </div>
 
-{{asset-uploader uploadUrl='/files' uploadParams=controller.uploadParams uploadDataName='file'}}
+{{asset-uploader uploadUrl='/files' uploadParams=controller.uploadParams uploadDataName='file' width='300' height='300' action="fileUploaded" attachTo=controller.model.page deleteAction='deleteFile'}}
 
 <table class="table">
   <thead>
@@ -12,13 +12,13 @@
     </tr>
   </thead>
   <tbody>
-    {{#each asset in model}}
+    {{#each file in model}}
       <tr>
         <td>
-          {{asset.title}}
+          {{file.title}}
         </td>
         <td>
-          {{asset.description}}
+          {{file.description}}
         </td>
       </tr>
     {{/each}}
