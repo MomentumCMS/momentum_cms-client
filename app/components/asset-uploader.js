@@ -2,25 +2,26 @@
 export default Ember.Component.extend({
 
   plupload: false,
+  uploadUrl: '/',
+  uploadDataName: 'asset',
+  uploadParams: false,
   tag: 'asset',
+  baseUrl: false,
 
   //-- Plupload Initialization ----------------------------------------------
 
   didInsertElement: function() {
-    debugger;
     var uploader = new plupload.Uploader({
       runtimes: 'html5,flash,html4',
       container: this.$('.asset-uploader')[0],
       browse_button: this.$('.plupload-browse')[0],
-      url: this.get('uploadUrl'),
+      url: this.generateUploadUrl(),
       headers: {
         'Accept': 'application/javascript'
       },
       multipart: true,
-      multipart_params: {
-        tag: this.get('tag')
-      },
-      file_data_name: 'asset',
+      multipart_params: this.pluploadParams(),
+      file_data_name: this.get('uploadDataName'),
       drop_element: this.$('.plupload-dropelement')[0],
       multi_selection: false,
       init: {
@@ -34,6 +35,24 @@ export default Ember.Component.extend({
     this.set('plupload', uploader);
   },
 
+  pluploadParams: function() {
+    var params = {};
+    params.tag = this.get('tag');
+    if(this.get('uploadParams')) {
+      params = $.extend(params, this.get('uploadParams'));
+    }
+    return params;
+  },
+
+  generateUploadUrl: function() {
+    var url = '';
+    if(Ember.ENV.API_URL) {
+      url = Ember.ENV.API_URL;
+    }
+    url = url + this.get('uploadUrl');
+    return url;
+  },
+
   //-- Plupload Callbacks ---------------------------------------------------
 
   filesAdded: function(uploader) {
@@ -42,15 +61,15 @@ export default Ember.Component.extend({
   },
 
   beforeUpload: function(uploader) {
-    debugger;
+    this.$('.plupload-progress').css('opacity', 90);
   },
 
-  uploadProgress: function(uploader) {
-    debugger;
+  uploadProgress: function(uploader, file) {
+    this.$('.plupload-progress').css('width', file.percent + '%');
   },
 
   fileUploaded: function(uploader) {
-    debugger;
+    this.$('.plupload-progress').css('opacity', 90);
   }
 
 });
