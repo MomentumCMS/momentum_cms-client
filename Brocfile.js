@@ -50,10 +50,15 @@ app.import({
   production:  'vendor/ember-data/ember-data.prod.js'
 });
 
+app.import({development: 'vendor/plupload/js/moxie.js'});
+app.import({
+  development: 'vendor/plupload/js/plupload.dev.js',
+  production:  'vendor/plupload/js/plupload.full.min.js'
+});
+
 app.import({development: 'vendor/jquery-mockjax/jquery.mockjax.js'});
 app.import({development: 'vendor/sinon/index.js'});
 
-app.import('vendor/plupload/js/plupload.full.min.js');
 app.import('vendor/ember-easyForm/index.js');
 app.import('vendor/jquery.transit/jquery.transit.js');
 

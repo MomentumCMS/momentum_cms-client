@@ -1,0 +1,11 @@
+.asset-uploader {
+  .plupload-dropelement {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: #efefef;
+    border: 2px dashed darken(#efefef, 10);
+    border-radius: 4px;
+  }
+
+}
