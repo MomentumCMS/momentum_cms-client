@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h3>Templates</h3>
+</div>
+
+{{#link-to 'admin.templates.new' classNames='btn btn-default pull-right'}}
+  <i class="fa fa-plus"></i> New Template
+{{/link-to}}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Slug</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each template in model}}
+      <tr>
+        <td>
+          {{#link-to 'admin.templates.edit' template}}
+            {{template.label}}
+          {{/link-to}}
+        </td>
+        <td>
+          {{template.slug}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

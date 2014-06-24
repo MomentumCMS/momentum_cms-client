@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h3>Documents</h3>
+</div>
+
+{{#link-to 'admin.documents.new' classNames='btn btn-default pull-right'}}
+  <i class="fa fa-plus"></i> New Document
+{{/link-to}}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Slug</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each document in model}}
+      <tr>
+        <td>
+          {{#link-to 'admin.documents.edit' document}}
+            {{document.label}}
+          {{/link-to}}
+        </td>
+        <td>
+          {{document.slug}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

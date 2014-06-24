@@ -8,11 +8,26 @@
     </a>
   {{/link-to}}
 
-  <li><a href="#"><i class="fa fa-list fa-fw fa-lg"></i> Menus</a></li>
+  {{#link-to 'admin.menus.index' tagName="li"}}
+    <a href="#">
+      <i class="fa fa-list fa-fw fa-lg"></i>
+      Menus
+    </a>
+  {{/link-to}}
 
-  <li><a href="#"><i class="fa fa-database fa-fw fa-lg"></i> Documents</a></li>
+  {{#link-to 'admin.documents.index' tagName="li"}}
+    <a href="#">
+      <i class="fa fa-database fa-fw fa-lg"></i>
+      Documents
+    </a>
+  {{/link-to}}
 
-  <li><a href="#"><i class="fa fa-file-code-o fa-fw fa-lg"></i> Templates</a></li>
+  {{#link-to 'admin.templates.index' tagName="li"}}
+    <a href="#">
+      <i class="fa fa-file-code-o fa-fw fa-lg"></i>
+      Templates
+    </a>
+  {{/link-to}}
 
   {{#link-to 'admin.assets.index' tagName="li"}}
     <a href="#">

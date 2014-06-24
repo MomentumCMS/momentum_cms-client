@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h3>Menus</h3>
+</div>
+
+{{#link-to 'admin.pages.new' classNames='btn btn-default pull-right'}}
+  <i class="fa fa-plus"></i> New Menu
+{{/link-to}}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Label</th>
+      <th>Slug</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each menu in model}}
+      <tr>
+        <td>
+          {{#link-to 'admin.menus.edit' menu}}
+            {{menu.label}}
+          {{/link-to}}
+        </td>
+        <td>
+          {{menu.slug}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

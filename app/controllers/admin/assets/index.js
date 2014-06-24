@@ -1,4 +1,3 @@
-import DS from 'ember-data';
 export default Ember.Controller.extend({
 
   uploadParams: {
@@ -7,14 +6,12 @@ export default Ember.Controller.extend({
 
   actions: {
 
-    fileUploaded: function(file) {
-      var s = DS.RESTSerializer.create();
-      debugger;
-      this.store.push('file', file.file);
+    fileUploaded: function() {
+      // stub
     },
 
-    deleteFile: function(file) {
-      debugger;
+    deleteFile: function() {
+      // stub
     }
 
   }

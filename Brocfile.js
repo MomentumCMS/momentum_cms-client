@@ -45,10 +45,10 @@ var select2 = pickFiles('vendor/select2', {
 
 //-- Legacy File Imports ----------------------------------------------------
 
-app.import({
-  development: 'vendor/ember-data/ember-data.js',
-  production:  'vendor/ember-data/ember-data.prod.js'
-});
+// app.import({
+//   development: 'vendor/ember-data/ember-data.js',
+//   production:  'vendor/ember-data/ember-data.prod.js'
+// });
 
 app.import({development: 'vendor/plupload/js/moxie.js'});
 app.import({
