@@ -17,7 +17,7 @@
     {{#each template in model}}
       <tr>
         <td>
-          {{#link-to 'admin.templates.edit' template}}
+          {{#link-to 'admin.templates.edit' template.id}}
             {{template.label}}
           {{/link-to}}
         </td>

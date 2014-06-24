@@ -8,5 +8,5 @@ export default DS.Model.extend({
   adminValue: DS.attr('string'),
   createdAt: DS.attr(),
   updatedAt: DS.attr(),
-  belongsTo: DS.belongsTo('site')
+  site: DS.belongsTo('site')
 });

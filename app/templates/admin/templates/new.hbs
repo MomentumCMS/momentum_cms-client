@@ -1,0 +1,17 @@
+<div class="page-header">
+  <h3>Add New Template</h3>
+</div>
+
+{{#form-for model.template}}
+
+  {{input label}}
+
+  {{input identifier}}
+
+  {{input slug}}
+
+  {{submit}}
+
+  {{#link-to 'admin.templates.index' classNames='btn btn-default'}}Cancel{{/link-to}}
+
+{{/form-for}}
